@@ -1,16 +1,24 @@
 {
     "name": "coderkearns.github.io",
-    "private": true,
-    "version": "0.0.0",
-    "type": "module",
+    "version": "1.0.0",
+    "description": "",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "preview": "vite preview",
-        "deploy": "pnpm run build && gh-pages -d dist -b gh-pages"
+        "build": "postcss ./tailwind.css -o ./dist/styles.css",
+        "dev:postcss": "postcss -w ./tailwind.css -o ./dist/styles.css",
+        "dev:server": "live-server dist --port=8080",
+        "dev": "concurrently --kill-others \"pnpm run dev:postcss\" \"pnpm run dev:server\"",
+        "deploy": "gh-pages -d dist -b gh-pages"
     },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
     "devDependencies": {
+        "autoprefixer": "^10.4.8",
+        "concurrently": "^7.3.0",
         "gh-pages": "^4.0.0",
-        "vite": "^3.0.0"
+        "live-server": "^1.2.2",
+        "postcss": "^8.4.14",
+        "postcss-cli": "^10.0.0",
+        "tailwindcss": "^3.1.7"
     }
 }
