@@ -7,21 +7,10 @@
         "dev": "vite",
         "build": "vite build",
         "preview": "vite preview",
-        "clean": "rm -r dist",
-        "deploy": "vite build && gh-pages -d dist -b gh-pages -m 'CHORE: build and deploy'"
-    },
-    "dependencies": {
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "deploy": "pnpm run build && gh-pages -d dist -b gh-pages"
     },
     "devDependencies": {
-        "@types/react": "^18.0.15",
-        "@types/react-dom": "^18.0.6",
-        "@vitejs/plugin-react": "^2.0.0",
-        "autoprefixer": "^10.4.8",
         "gh-pages": "^4.0.0",
-        "postcss": "^8.4.14",
-        "tailwindcss": "^3.1.7",
         "vite": "^3.0.0"
     }
 }
